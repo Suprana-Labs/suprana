@@ -1,0 +1,10 @@
+# Runtime data
+ledger/
+*.log
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+.env.local

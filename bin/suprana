@@ -1,0 +1,21 @@
+#!/bin/bash
+# Suprana CLI - Blockchain with SUP native token
+# This wrapper provides Suprana-branded commands
+
+SUPRANA_CONFIG_DIR="${HOME}/.config/suprana/cli"
+SUPRANA_NETWORK="${SUPRANA_NETWORK:-http://localhost:8899}"
+
+# Create config directory if it doesn't exist
+mkdir -p "${SUPRANA_CONFIG_DIR}"
+
+# Set custom config file
+export SUPRANA_CONFIG_FILE="${SUPRANA_CONFIG_DIR}/config.yml"
+
+# Initialize config if it doesn't exist
+if [ ! -f "${SUPRANA_CONFIG_FILE}" ]; then
+    solana config set --url "${SUPRANA_NETWORK}" --config "${SUPRANA_CONFIG_FILE}" > /dev/null 2>&1
+fi
+
+# Execute solana command with custom config and replace SOL with SUP in output
+solana --config "${SUPRANA_CONFIG_FILE}" "$@" 2>&1 | sed 's/ SOL/ SUP/g; s/SOL/SUP/g; s/Solana/Suprana/g; s/solana/suprana/g'
+exit ${PIPESTATUS[0]}

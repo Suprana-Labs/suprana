@@ -1,0 +1,85 @@
+╔═══════════════════════════════════════════════════════════════╗
+║              SUPRANA BLOCKCHAIN - QUICK REFERENCE             ║
+╠═══════════════════════════════════════════════════════════════╣
+║  Native Token: SUP | Total Supply: 10B | Network: Localhost  ║
+╚═══════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ SETUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Add to PATH (add to ~/.zshrc for permanent):
+export PATH="/Users/yousefhosseini/Dropbox/PAI/Pai2v3compact/testnet/suprana/bin:$PATH"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ VALIDATOR COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Start:    ./bin/suprana-test-validator
+Stop:     pkill -f suprana-test-validator
+Logs:     tail -f validator.log
+Status:   suprana cluster-version
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WALLET COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+New Wallet:       suprana-keygen new
+Show Address:     suprana address
+Check Balance:    suprana balance
+Airdrop:          suprana airdrop 1000
+Send SUP:         suprana transfer <ADDRESS> <AMOUNT>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ NETWORK INFO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RPC:              http://localhost:8899
+WebSocket:        ws://localhost:8900
+Explorer:         N/A (use CLI commands)
+Block Height:     suprana block-height
+Genesis Hash:     suprana genesis-hash
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ PAILET WALLET (Chrome Extension)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Location:         ~/Desktop/pailet-extension/
+Load in Chrome:   chrome://extensions/ → Load unpacked
+Network:          Settings → localhost (Suprana Local)
+Features:         Send, Receive, Swap, Airdrop
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ COMMON WORKFLOWS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. START SUPRANA NETWORK
+   cd /Users/yousefhosseini/Dropbox/PAI/Pai2v3compact/testnet/suprana
+   ./bin/suprana-test-validator &
+
+2. GET SOME SUP
+   suprana airdrop 1000
+
+3. CHECK BALANCE
+   suprana balance
+
+4. SEND SUP TO ANOTHER ADDRESS
+   suprana transfer <RECIPIENT> 10
+
+5. USE WITH PAILET
+   - Load extension in Chrome
+   - Create/import wallet
+   - Network: localhost
+   - Request airdrop or receive SUP
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ USEFUL ADDRESSES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Test Address:     54PygA8qiSxKvJWJRdyAQHmmrQEN8ir1vFektGoyfR5n
+Config Dir:       ~/.config/suprana/cli/
+Ledger Dir:       ./ledger/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Need help? Check: ./README.md or ../SUPRANA_COMPLETE.md
