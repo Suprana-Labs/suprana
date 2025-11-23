@@ -1,14 +1,8 @@
 #!/bin/bash
-# Suprana Keygen - Keypair generation for Suprana
-
 SUPRANA_CONFIG_DIR="${HOME}/.config/suprana/cli"
-
-# Create config directory if it doesn't exist
 mkdir -p "${SUPRANA_CONFIG_DIR}"
 
-# Execute solana-keygen with custom config path
 if [ "$1" = "new" ] && [ "$2" = "" ]; then
-    # Default to suprana config location
     solana-keygen new --outfile "${SUPRANA_CONFIG_DIR}/id.json" "${@:2}"
 else
     solana-keygen "$@"

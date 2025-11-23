@@ -1,30 +1,15 @@
 #!/bin/bash
-# Suprana Test Validator
-# Starts a local Suprana validator with 10B SUP total supply
-
-SUPRANA_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SUPRANA_DIR="$HOME/suprana"
 LEDGER_DIR="${SUPRANA_DIR}/ledger"
-CONFIG_DIR="${SUPRANA_DIR}/config"
-
-# Token configuration
-TOTAL_SUPPLY=10000000000  # 10 billion SUP
-LAMPORTS_PER_SUP=1000000000  # Same as SOL (1 billion lamports per SUP)
-TOTAL_LAMPORTS=$((TOTAL_SUPPLY * LAMPORTS_PER_SUP))
 
 echo "🚀 Starting Suprana Test Validator"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Network: Suprana Testnet"
 echo "Native Token: SUP"
-echo "Total Supply: ${TOTAL_SUPPLY} SUP"
+echo "Total Supply: 10000000000 SUP"
 echo "Ledger: ${LEDGER_DIR}"
 echo "RPC URL: http://localhost:8899"
 echo "WebSocket: ws://localhost:8900"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo ""
 
-# Start the validator with custom settings
-solana-test-validator \
-    --ledger "${LEDGER_DIR}" \
-    --reset \
-    --quiet \
-    "$@"
+solana-test-validator --ledger "${LEDGER_DIR}" --reset --quiet "$@"

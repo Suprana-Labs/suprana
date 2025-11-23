@@ -7,7 +7,7 @@ A high-performance blockchain fork optimized for decentralized applications.
 **Suprana** is a blockchain network featuring:
 - **Native Token**: SUP
 - **Total Supply**: 10 Billion SUP
-- **Block Time**: ~400ms
+- **Block Time**: ~200ms
 - **Consensus**: Proof of History (PoH) + Proof of Stake (PoS)
 
 ## Quick Start
@@ -93,11 +93,11 @@ suprana transaction-history      # Show transaction history
 - `SUPRANA_NETWORK` - Network URL (default: http://localhost:8899)
 - `SUPRANA_CONFIG_DIR` - Config directory (default: ~/.config/suprana/cli)
 
-## PAILET Wallet
+## Suplet Wallet
 
-The PAILET wallet Chrome extension supports Suprana network:
+The Suplet wallet Chrome extension supports Suprana network:
 
-1. Load PAILET extension in Chrome
+1. Load Suplet extension in Chrome
 2. Network will default to localhost (Suprana)
 3. All balances shown in SUP
 4. Send/receive SUP tokens
@@ -120,7 +120,7 @@ suprana/
 - **Branding**: Suprana blockchain
 - **Token**: SUP (10 billion total supply)
 - **Decimals**: 9 (1 SUP = 1,000,000,000 lamports)
-- **Block Time**: ~400ms
+- **Block Time**: ~200ms
 - **Consensus**: Proof of History (PoH) + Proof of Stake (PoS)
 
 ## Support
