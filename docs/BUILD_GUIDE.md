@@ -144,8 +144,16 @@ export RUSTFLAGS="-C target-cpu=native"
 
 ### 3. Build All Components
 
+> **CRITICAL: Build Time Warning**
+>
+> Build times vary significantly by architecture:
+> - **x86_64 (Intel/AMD)**: ~15-30 minutes
+> - **ARM64 (Apple Silicon)**: ~8-10 hours (35x longer due to cross-compilation)
+>
+> Tested on Apple M-series: 538 minutes (8h 58min). Plan accordingly and consider using pre-built binaries for ARM64 macOS if available.
+
 ```bash
-# Full build (this will take 15-30 minutes)
+# Full build
 cargo build --release
 
 # The binaries will be in target/release/
